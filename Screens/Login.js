@@ -1,34 +1,57 @@
 import React from 'react';
-import { StyleSheet, Text, View, Image } from 'react-native';
+import { StyleSheet, Text, View, Image, SafeAreaView, TouchableOpacity } from 'react-native';
 
 const Login = () => {
     return (
-        <View style={styles.container}>
-            <View style={{ width: '100%' }}>
-                <Image
-                    style={{ width: '100%', height: 200 }} // Adjust the height as needed
-                    source={{
-                        uri: 'https://media.istockphoto.com/id/1322277517/photo/wild-grass-in-the-mountains-at-sunset.jpg?s=612x612&w=0&k=20&c=6mItwwFFGqKNKEAzv0mv6TaxhLN3zSE43bWmFN--J5w=',
-                    }}
-                />
+        <SafeAreaView>
+            <Image source={require('../assets/bg.jpg')} style={styles.image} />
+            <View style={styles.container}>
+                <Text style={styles.welcomeText}>
+                    WELCOME MR Education</Text>
+                <Text style={styles.Login}>Login/Signup</Text>
+                <TouchableOpacity style={styles.button}>
+                    Sign In with Google
+                </TouchableOpacity>
             </View>
-            <View>
-                <Image source={require('/assets/bg.jpg')} style={{ width: '100%', height: 200 }}/>
-                <Text style={styles.wellcomeText}>WELCOME MR Education</Text>
-            </View>
-        </View>
+        </SafeAreaView>
     );
 };
 
 const styles = StyleSheet.create({
     container: {
-        flex: 1,
-        alignItems: 'center',
-        justifyContent: 'center',
+        // flex: 1,
+        // alignItems: 'center',
+        // justifyContent: 'center',
+        paddingTop: 40,
+        marginTop: -20,
+        backgroundColor: "#fff",
+        borderTopRightRadius: 20,
+        borderTopLeftRadius: 20,
     },
-    wellcomeText: {
+    image: {
+        // width: '100%',
+        height: 200,
+    },
+    welcomeText: {
+        marginTop: 10,
         fontSize: 35,
+        textAlign: 'center',
+        fontWeight: 'bold',
+        color: "black",
     },
+    Login: {
+        textAlign: "center",
+        color: "black",
+        marginTop: 10,
+    },
+    button: {
+        backgroundColor: "green",
+        padding: 10,
+        margin: 30,
+        textAlign: "center",
+        borderRadius: 10,
+    }
+
 });
 
 export default Login;
